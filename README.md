@@ -1,4 +1,4 @@
-#Yii telegram error handler
+# Yii telegram error handler
 
 ## Installation
 
@@ -32,18 +32,18 @@ If you are creating a console application, you need to put the following code in
 ```
 <?php
 $config = [
-...
-'components' => [
-...
-'errorHandler' => [
-'class' => 'zafarjonovich\YiiTelegramErrorHandler\Console' ,
-'telegram' => [
-'bot_token' => '123456789:ABCKDFHJKSDHKSJHDFKDHF' ,
-'chat_ids' => [123,234,456]
-]
-]
+    ...
+    'components' => [
+        ...
+        'errorHandler' => [
+            'class' => 'zafarjonovich\YiiTelegramErrorHandler\Console' ,
+            'telegram' => [
+                'bot_token' => '123456789:ABCKDFHJKSDHKSJHDFKDHF' ,
+                'chat_ids' => [123,234,456]
+            ]
+        ]
 
-];
+    ];
 ?>
 ```
 
