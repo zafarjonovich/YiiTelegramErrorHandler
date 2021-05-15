@@ -12,10 +12,7 @@ class Console extends \yii\console\ErrorHandler
     protected function renderException($exception)
     {
 
-        $this->telegram['exception'] = $exception;
-
         $telegram = new Telegram($this->telegram);
-
         $telegram->sendExeption($exception);
 
         parent::renderException($exception);

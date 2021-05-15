@@ -28,7 +28,12 @@ class Telegram extends BaseObject
 
         if($getme['ok'] and !empty($this->chat_ids)) {
 
-            $message = strtr($this->message_structure,get_object_vars($exception));
+            $message = strtr($this->message_structure,[
+                '{message}' => $exception->getMessage() ,
+                '{file}' => $exception->getFile() ,
+                '{line}' => $exception->getLine() ,
+                '{code}' => $exception->getCode() ,
+            ]);
 
             foreach ($this->chat_ids as $chat_id) {
                 $botApi->sendMessage($chat_id,$message);
